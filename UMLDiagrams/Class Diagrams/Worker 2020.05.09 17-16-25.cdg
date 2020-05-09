@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Worker">
+  <ClassDiagramComponents>
+    <Class name="Program" package="application" visibility="public" xPosition="21.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="menu" returnType="void" visibility="public" isStatic="true">
+          <Argument type="List&lt;Worker&gt;" name="workers"/>
+        </Method>
+        <Method name="workerInfo" returnType="void" visibility="public" isStatic="true">
+          <Argument type="List&lt;Worker&gt;" name="workers"/>
+        </Method>
+        <Method name="incomePerMonth" returnType="void" visibility="public" isStatic="true">
+          <Argument type="List&lt;Worker&gt;" name="workers"/>
+        </Method>
+        <Method name="addContract" returnType="void" visibility="public" isStatic="true">
+          <Argument type="List&lt;Worker&gt;" name="workers"/>
+        </Method>
+        <Method name="removeContract" returnType="void" visibility="public" isStatic="true">
+          <Argument type="List&lt;Worker&gt;" name="workers"/>
+        </Method>
+        <Method name="removePerId" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="List&lt;Worker&gt;" name="workers"/>
+        </Method>
+        <Method name="selectPerName" returnType="Worker" visibility="public" isStatic="true">
+          <Argument type="List&lt;Worker&gt;" name="workers"/>
+        </Method>
+        <Method name="createContract" returnType="HourContract" visibility="public" isStatic="true"/>
+        <Method name="createWorker" returnType="Worker" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="Department" package="entities" visibility="public" xPosition="924.0" yPosition="324.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="HourContract" package="entities" visibility="public" xPosition="151.0" yPosition="65.0">
+      <Fields>
+        <Field name="id" type="Integer" visibility="private"/>
+        <Field name="date" type="Date" visibility="private"/>
+        <Field name="valuePerHour" type="Double" visibility="private"/>
+        <Field name="hours" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="date"/>
+          <Argument type="Double" name="valuePerHour"/>
+          <Argument type="Integer" name="hours"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="totalValue" returnType="double" visibility="public"/>
+        <Method name="getId" returnType="Integer" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getDate" returnType="Date" visibility="public"/>
+        <Method name="setDate" returnType="void" visibility="public">
+          <Argument type="String" name="date"/>
+        </Method>
+        <Method name="getValuePerHour" returnType="Double" visibility="public"/>
+        <Method name="setValuePerHour" returnType="void" visibility="public">
+          <Argument type="Double" name="valuePerHour"/>
+        </Method>
+        <Method name="getHours" returnType="Integer" visibility="public"/>
+        <Method name="setHours" returnType="void" visibility="public">
+          <Argument type="Integer" name="hours"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Worker" package="entities" visibility="public" xPosition="559.0" yPosition="20.0">
+      <Fields>
+        <Field name="id" type="Integer" visibility="private"/>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="level" type="WorkerLevel" visibility="private"/>
+        <Field name="baseSalary" type="Double" visibility="private"/>
+        <Field name="contracts" type="List&lt;HourContract&gt;" visibility="private"/>
+        <Field name="department" type="Department" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="id"/>
+          <Argument type="String" name="name"/>
+          <Argument type="WorkerLevel" name="level"/>
+          <Argument type="Department" name="department"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="addContract" returnType="void" visibility="public">
+          <Argument type="HourContract" name="contract"/>
+        </Method>
+        <Method name="removeContract" returnType="void" visibility="public">
+          <Argument type="HourContract" name="constract"/>
+        </Method>
+        <Method name="income" returnType="double" visibility="public">
+          <Argument type="int" name="year"/>
+          <Argument type="int" name="month"/>
+        </Method>
+        <Method name="settingBaseSalary" returnType="void" visibility="public"/>
+        <Method name="getId" returnType="Integer" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="Integer" name="id"/>
+        </Method>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getLevel" returnType="WorkerLevel" visibility="public"/>
+        <Method name="setLevel" returnType="void" visibility="public">
+          <Argument type="WorkerLevel" name="level"/>
+        </Method>
+        <Method name="getBaseSalery" returnType="Double" visibility="public"/>
+        <Method name="setBaseSalery" returnType="void" visibility="public">
+          <Argument type="Double" name="baseSalary"/>
+        </Method>
+        <Method name="getContracts" returnType="List&lt;HourContract&gt;" visibility="public"/>
+        <Method name="getDepartment" returnType="Department" visibility="public"/>
+        <Method name="setDepartment" returnType="void" visibility="public">
+          <Argument type="Department" name="department"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Enum name="WorkerLevel" package="entities.enums" visibility="public" xPosition="924.0" yPosition="84.0">
+      <Literals>
+        <Literal name="JUNIOR"/>
+        <Literal name="MID_LEVEL"/>
+        <Literal name="SENIOR"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="entities.Worker" target="entities.HourContract" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="level" source="entities.Worker" target="entities.enums.WorkerLevel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="entities.Worker" target="entities.Department" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="department" source="entities.Worker" target="entities.Department" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="contracts" source="entities.Worker" target="entities.HourContract" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;HourContract&gt;"/>
+    <UseRelation source="entities.Worker" target="entities.Worker" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="application.Program" target="entities.Worker" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="application.Program" target="entities.HourContract" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

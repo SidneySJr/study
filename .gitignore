@@ -24,3 +24,6 @@ hs_err_pid*
 /testeGit/nbproject/private/
 /Enum/nbproject/private/
 /Enum/build/
+/Worker/nbproject/private/
+/Worker/build/
+/Worker/dist/
