@@ -85,6 +85,7 @@ public class Main {
         var day2 = cal.get(Calendar.DAY_OF_MONTH);
         var month2 = cal.get(Calendar.MONTH);
         var year2 = cal.get(Calendar.YEAR);
+
         if (month2 < month) {
             JOptionPane.showMessageDialog(null, "You already made the birthday this year");
         } else if (month == month2 && day == day2) {
