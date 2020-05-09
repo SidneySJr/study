@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="BankUdemy">
+  <ClassDiagramComponents>
+    <Class name="Main" package="application" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="account" type="Account" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="cashMachine" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="createAccount" returnType="Account" visibility="public" isStatic="true"/>
+        <Method name="verifyAccount" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Account" name="account"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Account" package="entities" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="cod" type="int" visibility="private" isStatic="true"/>
+        <Field name="user" type="User" visibility="private"/>
+        <Field name="number" type="int" visibility="private"/>
+        <Field name="saldo" type="double" visibility="private"/>
+        <Field name="active" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="User" name="user"/>
+          <Argument type="double" name="saldo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCod" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="isActive" returnType="boolean" visibility="public"/>
+        <Method name="setActive" returnType="void" visibility="public">
+          <Argument type="boolean" name="active"/>
+        </Method>
+        <Method name="getUser" returnType="User" visibility="public"/>
+        <Method name="setUser" returnType="void" visibility="public">
+          <Argument type="User" name="user"/>
+        </Method>
+        <Method name="getNumber" returnType="int" visibility="public"/>
+        <Method name="getSaldo" returnType="double" visibility="public"/>
+        <Method name="setSaldo" returnType="void" visibility="public">
+          <Argument type="double" name="saldo"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="User" package="entities" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="cod" type="int" visibility="package" isStatic="true"/>
+        <Field name="name" type="String" visibility="package"/>
+        <Field name="cpf" type="String" visibility="package"/>
+        <Field name="birth" type="Date" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="cpf"/>
+          <Argument type="String" name="birth"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getCpf" returnType="String" visibility="public"/>
+        <Method name="setCpf" returnType="void" visibility="public">
+          <Argument type="String" name="cpf"/>
+        </Method>
+        <Method name="getBirth" returnType="Date" visibility="public"/>
+        <Method name="setBirth" returnType="void" visibility="public">
+          <Argument type="String" name="birth"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CashMachine" package="util" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="cash" type="double" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="withdraw" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Account" name="account"/>
+          <Argument type="Double" name="withdraw"/>
+        </Method>
+        <Method name="deposit" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Account" name="account"/>
+          <Argument type="double" name="deposit"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="user" source="entities.Account" target="entities.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="util.CashMachine" target="entities.Account" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="account" source="application.Main" target="entities.Account" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="entities.Account" target="entities.User" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="application.Main" target="entities.Account" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
